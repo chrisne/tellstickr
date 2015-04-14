@@ -41,9 +41,9 @@ module TellStickR
       devices = []
       while(i < nr_of_devices) do
         id = TellStickR::Core.tdGetDeviceId(i)
-        name = TellStickR::Core.tdGetName(i)
-        protocol = TellStickR::Core.tdGetProtocol(i)
-        model = TellStickR::Core.tdGetModel(i)
+        name = TellStickR::Core.tdGetName(id)
+        protocol = TellStickR::Core.tdGetProtocol(id)
+        model = TellStickR::Core.tdGetModel(id)
         devices << Device.new(id, name, protocol, model)
         i += 1
       end
